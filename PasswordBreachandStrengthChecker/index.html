@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Password Breach Checker</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔐</text></svg>" />
+<link rel="stylesheet" href="index.css" />
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-brand">
+    <span class="icon">🔐</span>
+    <span class="nav-title">Password Breach Checker</span>
+  </div>
+  <button type="button" id="themeToggle" class="theme-toggle" aria-label="Switch to light mode">
+    <span id="themeIcon">🌙</span>
+  </button>
+</nav>
+
+<main class="page">
+<div class="card">
+  <div class="card-hero">
+    <span class="hero-icon">🛡️</span>
+    <h1 class="hero-title">Check your password's safety</h1>
+    <p class="subtitle">Your password never leaves your browser</p>
+  </div>
+
+  <label for="password">Enter a password</label>
+  <div class="input-wrapper">
+    <input type="password" id="password" placeholder="Type a password to check" autocomplete="off" />
+    <button type="button" id="toggleVisibility" aria-label="Show password">👁️</button>
+  </div>
+
+  <div id="livePreview" class="live-preview hidden">
+    <span id="liveDot" class="live-dot"></span>
+    <span>Strength as you type:</span>
+    <span id="liveLabel" class="live-label"></span>
+  </div>
+
+  <div class="button-row">
+    <button id="checkBtn" class="primary-btn">Check password</button>
+    <button id="generateBtn" type="button" class="secondary-btn" aria-label="Generate a strong password" title="Generate a strong password">🎲</button>
+  </div>
+
+  <div id="kAnonBadge" class="k-anon-badge hidden">
+    <span class="pulse-dot"></span>
+    <span>Sending only 5 characters of a scrambled hash — never your real password</span>
+  </div>
+
+  <div id="result" class="result hidden">
+    <div id="breachBox" class="breach-box">
+      <span id="breachIcon" class="breach-icon"></span>
+      <div>
+        <p id="breachTitle" class="breach-title"></p>
+        <p id="breachSubtitle" class="breach-subtitle"></p>
+      </div>
+    </div>
+
+    <p class="strength-label">Strength</p>
+    <div class="strength-bars">
+      <div class="bar" id="bar1"></div>
+      <div class="bar" id="bar2"></div>
+      <div class="bar" id="bar3"></div>
+      <div class="bar" id="bar4"></div>
+    </div>
+    <p id="strengthText" class="strength-text"></p>
+  </div>
+
+  <p id="errorMsg" class="error hidden">Something went wrong. Please try again.</p>
+</div>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
