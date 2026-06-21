@@ -4,9 +4,6 @@ A privacy-first web app that checks whether a password has been exposed in known
 
 Built for the **Creative Showcase Hackathon** (Theme : Cybersecurity)
 
-🔗 **Live demo:** 
-
-
 
 ## What it does
 
